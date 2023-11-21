@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import 'bootstrap/dist/css/bootstrap.css'
 const Navbar = () => {
     return (
       <>
@@ -26,7 +26,7 @@ const Navbar = () => {
                     <ul class="nav justify-content-end">
   
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/cart">
                           <i class="fa fa-shopping-cart"></i> Cart (0)
                         </a>
                       </li>
