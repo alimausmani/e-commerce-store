@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+=======
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+>>>>>>> 1b5ecff08c7d4bfbc7955e9dc489e15d2e15bac1
   },
   "devDependencies": {
     "next": "^14.0.3"
