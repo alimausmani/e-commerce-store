@@ -48,6 +48,11 @@ const Navbar = () => {
                           <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-heart"></i> Login 
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -82,7 +87,7 @@ const Navbar = () => {
                       <a class="nav-link" href="#">Mobile</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Fashion</a>
+                      <a class="nav-link" href="#">About</a>
                     </li>
                   </ul>
                 </div>
