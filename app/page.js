@@ -1,17 +1,15 @@
 "use client"
 import React from 'react';
-import Link from 'next/link';
+import 'bootstrap/dist/css/bootstrap.css'
+import Navbar from './Navbar';
+
 
 const Home = () => {
   return (
     <>
-      <h1> This Is My Home page</h1>
-      <Link href="/order">orders</Link>
-      <br /><br />
-      <Link href="/cart">cart</Link>
-      <br /><br />
-      <Link href="/about">About</Link>
-
+     
+    <Navbar/>
+    
     </>
   );
 };
