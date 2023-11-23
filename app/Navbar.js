@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.css'
 const Navbar = () => {
     return (
@@ -72,22 +71,22 @@ const Navbar = () => {
                       <a class="nav-link" href="/about">All Categories</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Sell</a>
+                      <a class="nav-link" href="/sell">Sell</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Men's Collection</a>
+                      <a class="nav-link" href="/mens_collection">Men's Collection</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Women's Collection</a>
+                      <a class="nav-link" href="/womens_collection">Women's Collection</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Electronics</a>
+                      <a class="nav-link" href="/electronic">Electronics</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Mobile</a>
+                      <a class="nav-link" href="/mobile">Mobile</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
+                      <a class="nav-link" href="/about">About</a>
                     </li>
                   </ul>
                 </div>
