@@ -45,3 +45,18 @@
         padding: 8px 10px;
     }
 }
+
+.footer{
+    border:solid black 2px;
+    bottom:0;
+    position: fixed;
+    width:1900px;
+
+}
+
+.text-center{
+    width:2000px;
+    height:300px;
+    color:#000;
+    margin-right: 100px;
+}
