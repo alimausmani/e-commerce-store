@@ -45,6 +45,7 @@
         padding: 8px 10px;
     }
 }
+<<<<<<< HEAD
 
 .footer{
     border:solid black 2px;
@@ -59,4 +60,11 @@
     height:300px;
     color:#000;
     margin-right: 100px;
+=======
+#product{
+    width: 1740px;
+    height: 400px;
+    margin: auto;
+    border: #000 solid 2px;
+>>>>>>> cbd4fc58badb2f42ca78a5eb3b4af10b61d30a7f
 }
