@@ -5,7 +5,7 @@ const CartNavbar = () => {
     return (
       <>
         <h1>hello</h1>
-        <p>poojameena</p>
+        <p>Cart Page</p>
   
   
       </>
