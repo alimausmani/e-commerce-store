@@ -45,6 +45,30 @@
         padding: 8px 10px;
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+.footer{
+    border:solid black 2px;
+    bottom:0;
+    position: fixed;
+    width:1900px;
+
+}
+
+.text-center{
+    width:2000px;
+    height:300px;
+    color:#000;
+    margin-right: 100px;
+=======
+#product{
+    width: 1740px;
+    height: 400px;
+    margin: auto;
+    border: #000 solid 2px;
+>>>>>>> cbd4fc58badb2f42ca78a5eb3b4af10b61d30a7f
+=======
 #product {
     width: 1710px;
     height: 550px;
@@ -194,3 +218,68 @@ h2 {
     background-color: #485769;
     color:white;
 }
+    
+.row8{
+    height: 600px;  
+    width:1845px;
+    background-color:#232F3E;
+}
+
+.num4{
+    height: 320px;
+    width:1500px;
+    margin:auto;
+    margin-top:40px;
+    color:white;
+}
+
+.col24{
+    height:318px;
+    width:136px;
+     
+    float:left;
+    padding:0px 15px;
+    
+}
+
+
+.col25{
+    height:318px;
+    width:184;
+    
+    float:left;
+    padding:0px 15px;
+    margin-left:97px;
+}
+
+.col26{
+    height:318px;
+    width:222;
+   
+    float:left;
+    padding:0px 15px;
+    margin-left:100px;
+}
+
+.col27{
+    height:318px;
+    width:157;
+   
+    float:left;
+    padding:0px 15px;
+    margin-left:100px;
+}
+.searchbar{
+  height: 50.34px;
+  border: 1px solid white;
+}
+.clickbutton{
+  height: 50.34px;
+  background-color:blue;
+  border: 1px solid black;
+>>>>>>> 56bf7427516e699de6753226caa253c6fa354660
+}
+    
+    
+    
+  

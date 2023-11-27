@@ -3,7 +3,7 @@ const Sell = () => {
     return (
       <>
         <h1>hello</h1>
-        <p>poojameena</p>
+        <p>Sell Page</p>
       </>
     );
   };

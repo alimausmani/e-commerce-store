@@ -13,6 +13,7 @@ import Navbar from './Navbar';
 import Image from './image_slider';
 import Product from './all_products';
 import './globals.css';
+import Footer from './footer';
 
 
 const Home = () => {
@@ -22,6 +23,9 @@ const Home = () => {
     <Navbar/>
     <Image/>
     <Product/>
+    <Product/>
+    <Product/>
+    <Footer/>
     
 >>>>>>> cbd4fc58badb2f42ca78a5eb3b4af10b61d30a7f
     </>
