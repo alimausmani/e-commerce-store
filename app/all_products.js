@@ -4,9 +4,9 @@ const Product= () => {
       <>
       <div id='product'>
         <div id='col1'></div>
-        <div id='col2'></div>
-        <div id='col3'></div>
-        <div id='col4'></div>
+        <div id='col1'></div>
+        <div id='col1'></div>
+        <div id='col1'></div>
       </div>  
       </>
     );
