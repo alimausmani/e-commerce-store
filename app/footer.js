@@ -24,7 +24,7 @@ const Footer= () => {
                    <p>Advertise Your Products</p>
                    <p>Self-Publish with Us</p>
                    <p>Host an Amazon Hub</p>
-                   <p>›See More Make Money with Us</p>
+                   <p>See More Make Money with Us</p>
                </div>
                
                <div class="col col26">
