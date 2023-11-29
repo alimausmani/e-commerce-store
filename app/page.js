@@ -9,6 +9,7 @@ import Footer from './footer';
 
 
 const Home = () => {
+
   return (
     <>
      
@@ -17,6 +18,7 @@ const Home = () => {
     <Product/>
     <Product/>
     <Product/>
+    {/* <all_categories/> */}
     <Footer/>
     
     </>

@@ -1,15 +1,14 @@
-
+"use client";
 import React, { useState, useEffect } from 'react';
 
-const MyWishlist = ({ initialUsers }) => {
-  const [users, setUsers] = useState(initialUsers);
+const MyWishlist = () => {
+  const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        setLoading(true);
         const response = await fetch('https://api.escuelajs.co/api/v1/users');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
