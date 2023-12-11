@@ -12,4 +12,4 @@ const CartNavbar = () => {
     );
   };
   
-  export default CartNavbar;
+export default CartNavbar;

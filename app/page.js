@@ -11,7 +11,6 @@ import Footer from './footer';
 const Home = () => {
   return (
     <>
-     
     <Navbar/>
     <Image/>
     <Product/>
@@ -23,5 +22,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

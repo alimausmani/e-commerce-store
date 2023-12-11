@@ -1,5 +1,7 @@
 import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.css'
+import Footer from './footer';
+import Details from "./about";
 const About=()=>{
     return(
         <div><>
@@ -9,7 +11,7 @@ const About=()=>{
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <h5 class="brand-name">Cart App</h5>
+                    <h5 class="brand-name">Shopping App</h5>
                   </div>
                   <div class="col-md-5 my-auto">
                     <form role="search">
@@ -71,7 +73,7 @@ const About=()=>{
                       <a class="nav-link" href="/about"> All Categories</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Sell</a>
+                      <a class="nav-link" href="/sell">Sell</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Men's Collection</a>
@@ -97,12 +99,9 @@ const About=()=>{
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
         </body>
       </>
-            <h2>This Is My about Page</h2>
-            <Link href="/">Home Page</Link>
-            <br /><br />
-            <Link href="/cart">Cart</Link>
-            <br /><br />
-            <Link href="/order">Orders</Link>
+            <h2>All Categories page</h2>
+            <div className="content"style={{ height: '800px' }}></div>
+            <Footer />
 
         </div>
     )

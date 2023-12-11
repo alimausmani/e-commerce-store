@@ -9,7 +9,7 @@ const Navbar = () => {
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                  <h5 class="brand-name">Shopping App</h5>
+                  <h5 class="brand-name">Orders page</h5>
                 </div>
                 <div class="col-md-5 my-auto">
                   <form role="search">
@@ -93,8 +93,7 @@ const Navbar = () => {
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
       </body>
-
-
+      <h1>Orders page</h1>
     </>
   );
 };
