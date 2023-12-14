@@ -1,4 +1,21 @@
 import Link from "next/link";
+<<<<<<< HEAD
+import "bootstrap/dist/css/bootstrap.css";
+const About = () => {
+  return (
+    <>
+      <h2>This Is My about Page</h2>
+      <Link href="/">Home Page</Link>
+      <br />
+      <br />
+      <Link href="/cart">Cart</Link>
+      <br />
+      <br />
+      <Link href="/order">Orders</Link>
+    </>
+  );
+};
+=======
 import 'bootstrap/dist/css/bootstrap.css'
 import Footer from './footer';
 import Details from "./about";
@@ -106,5 +123,6 @@ const About=()=>{
         </div>
     )
 }
+>>>>>>> 1ed575901537d87dcbc0f8a2f611692eb3e9dd13
 
 export default About;

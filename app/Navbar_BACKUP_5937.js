@@ -65,6 +65,28 @@ const Navbar = () => {
                 </div>
 >>>>>>> 1ed575901537d87dcbc0f8a2f611692eb3e9dd13
               </div>
+<<<<<<< HEAD
+            </div>
+          </div>
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+                E-Commerce
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/all_categories">All Categories</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/sell">Sell</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/mens_collection">Men's Collection</a>
+=======
               <div className="col-md-5 my-auto">
                 <form role="search">
                   <div className="input-group">
@@ -85,6 +107,7 @@ const Navbar = () => {
                     <a className="nav-link" href="/cart">
                       <i className="fa fa-shopping-cart"></i> Cart (0)
                     </a>
+>>>>>>> 11833122cc862c2dafd618c95bea4016fdbbd25f
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="/orders">
