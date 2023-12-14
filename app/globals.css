@@ -182,8 +182,6 @@ h2 {
     color: red;
     margin-top: 10px;
   }
-
-
   
 .footer1{
     height: 49px;  
@@ -270,20 +268,20 @@ h2 {
   }
     /* Adjust styles for smaller screens */
 
-  .num4 {
-    width: 100%;
+    .num4 {
+      width: 100%;
+    }
+  
+    .col24,
+    .col25,
+    .col26,
+    .col27 {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .col24,
+    .col25 {
+      margin-bottom: 15px;
+    }
   }
-
-  .col24,
-  .col25,
-  .col26,
-  .col27 {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .col24,
-  .col25 {
-    margin-bottom: 15px;
-  }
-}
