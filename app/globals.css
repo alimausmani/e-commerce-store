@@ -47,23 +47,22 @@
 }
 #product {
     width: 1710px;
-    height: 550px;
+    height: 480px;
     margin: auto;
     border: 1px solid #000;
     display: flex;
-    margin-bottom: 20px;
+    padding-top: 100px;
   }
-  
-
+ 
   #col1 {
     width: 435px;
-    height: 548px; 
+    height: 350px; 
     border: 1px solid #000; 
     margin-right: 20px;
   }
   #col2 {
     width: 435px;
-    height: 548px;
+    height: 350px;
     border: 1px solid #000;
     margin-right: 20px;
 
@@ -71,7 +70,7 @@
   
   #col3 {
     width: 435px;
-    height: 548px;
+    height: 350px;
     border: 1px solid #000;
     margin-right: 20px;
 
@@ -79,7 +78,7 @@
   
   #col4 {
     width: 435px;
-    height: 548px;
+    height: 350px;
     border: 1px solid #000;
 
   }
