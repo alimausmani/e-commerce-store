@@ -1,4 +1,3 @@
-
 // pages/all_categories/page.js
 "use client";
 
