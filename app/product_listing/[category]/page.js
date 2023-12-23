@@ -1,17 +1,10 @@
-// export default function Product({ params }) {
-//     return (
-//     <h1>Product id: {params.pid}</h1>
-
-//     );
-//   }
-
-
+// Product.js
 "use client";
-
-    
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Product = ({ params }) => {
+  const router = useRouter();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +15,7 @@ const Product = ({ params }) => {
         const response = await fetch('https://dummyjson.com/products');
 
         if (!response.ok) {
-          throw new Error('HTTP error! Status: ${response.status}');
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
@@ -45,9 +38,13 @@ const Product = ({ params }) => {
     };
 
     fetchData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []);
 
-  const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
+  const filteredProducts = products.filter((product) => product.category === params.category);
+
+  const handleViewAll = (productId) => {
+    router.push(`/product_listing/${encodeURIComponent(productId)}`);
+  };
 
   return (
     <div>
@@ -61,7 +58,12 @@ const Product = ({ params }) => {
             <div key={product.id}>
               <p>Name: {product.title}</p>
               <p>Category: {product.category}</p>
-              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '100px' }} />
+              <img
+                onClick={() => handleViewAll(product.id)}
+                src={product.thumbnail}
+                alt={product.title}
+                style={{ maxWidth: '100px', cursor: 'pointer' }}
+              />
               <hr />
             </div>
           ))}
