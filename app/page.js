@@ -1,4 +1,3 @@
-// home.js
 "use client"
 import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
@@ -6,7 +5,7 @@ import Image from "./image_slider";
 import "./globals.css";
 import Footer from "./footer";
 import ProductList from './product_listing/page';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';  // Correct import statement
 
 const Home = () => {
   const router = useRouter();
@@ -23,7 +22,7 @@ const Home = () => {
       const response = await fetch('https://dummyjson.com/products');
 
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error(`HTTP error! Status: ${response.status}`);  // Correct error message format
       }
 
       const data = await response.json();
@@ -58,12 +57,11 @@ const Home = () => {
   };
 
   const handleViewAll = (category) => {
-    router.push(`api/product_listing/${encodeURIComponent(category)}`);
+    router.push(`/product_listing/${encodeURIComponent(category)}`);  // Correct router push format
   };
 
   return (
     <div>
-
       <Image />
       {error && <p>{error}</p>}
 
@@ -81,7 +79,6 @@ const Home = () => {
                     <p>Name: {product.title}</p>
                     <p>Category: {product.category}</p>
                     <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '150px' }} />
-
                     <hr />
                   </div>
                 ))}
@@ -90,6 +87,7 @@ const Home = () => {
           ))}
         </div>
       )}
+
       <Footer />
     </div>
   );
