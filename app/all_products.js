@@ -16,15 +16,6 @@
 
 //   export default Product;
 
-// Home.js
-
-
-
-
-
-
-
-
 
 
 
@@ -55,11 +46,12 @@ const AllProducts = () => {
       <h1>Products</h1>
       {Array.isArray(products) &&
         products.map((product) => (
-          <div className="col" key={product.id}>
+          <div className="col" id='col1'    key={product.id}>
+        
             <h2>{product.name}</h2>
             <p>{product.reviews}</p>
             <p>{product.price}</p>
-            <img src={product.image} alt={product.name} />
+            <img src={product.img[0]} alt={product.name} />
           </div>
         ))}
     </div>
