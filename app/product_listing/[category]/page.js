@@ -43,7 +43,8 @@ const Product = ({ params }) => {
   const filteredProducts = products.filter((product) => product.category === params.category);
 
   const handleViewAll = (productId) => {
-    router.push(`/product_listing/${encodeURIComponent(productId)}`);
+    // Modify the route to navigate to the Home page (product_details)
+    router.push(`/product_details/${encodeURIComponent(productId)}`);
   };
 
   return (
@@ -56,13 +57,16 @@ const Product = ({ params }) => {
         <div>
           {filteredProducts.map((product) => (
             <div key={product.id}>
-              <p>Name: {product.title}</p>
-              <p>Category: {product.category}</p>
+              <h5>Name: {product.title}</h5>
+              <h5>Category: {product.category}</h5>
+              <h5>price: {product.price}</h5>
+              <h5>stock: {product.stock}</h5>
+
               <img
                 onClick={() => handleViewAll(product.id)}
                 src={product.thumbnail}
                 alt={product.title}
-                style={{ maxWidth: '100px', cursor: 'pointer' }}
+                style={{ maxWidth: '300px', cursor: 'pointer' }}
               />
               <hr />
             </div>

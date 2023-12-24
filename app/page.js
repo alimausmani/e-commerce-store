@@ -1,4 +1,5 @@
-"use client"
+// Home.js
+"use client";
 import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import Image from "./image_slider";
@@ -22,7 +23,7 @@ const Home = () => {
       const response = await fetch('https://dummyjson.com/products');
 
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);  // Correct error message format
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       const data = await response.json();
@@ -56,8 +57,10 @@ const Home = () => {
     }
   };
 
-  const handleViewAll = (category) => {
-    router.push(`/product_listing/${encodeURIComponent(category)}`);  // Correct router push format
+  const handleViewAll = (category, productId) => {
+    // If productId is provided, navigate to product_details, otherwise navigate to product_listing
+    const destination = productId ? `/product_details/${encodeURIComponent(productId)}` : `/product_listing/${encodeURIComponent(category)}`;
+    router.push(destination);
   };
 
   return (
@@ -75,14 +78,25 @@ const Home = () => {
               {products
                 .filter((product) => product.category === category)
                 .map((product) => (
-                  <div key={product.id}>
-                    <p>Name: {product.title}</p>
-                    <p>Category: {product.category}</p>
-                    <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '150px' }} />
+                <div key={product.id} className="row"> {/* Use Bootstrap column class to set width */}
+                <div key={product.id} className="col-lg-4" style={{float:'left'}}>
+
+                    <h5>Name: {product.title}</h5>
+                    <h5>Category: {product.category}</h5>
+                    <h5>price: {product.price}</h5>
+                    <h5>stock: {product.stock}</h5>
+
+                    <img
+                      onClick={() => handleViewAll(category, product.id)}  // Pass both category and product id
+                      src={product.thumbnail}
+                      alt={product.title}
+                      style={{ maxWidth: '100px', cursor: 'pointer' }}
+                    />
                     <hr />
                   </div>
+                </div>
                 ))}
-              <button onClick={() => handleViewAll(category)}>View All</button>
+              <button onClick={() => handleViewAll(category)} className='view_all'>View All</button>
             </div>
           ))}
         </div>

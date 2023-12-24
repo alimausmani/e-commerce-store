@@ -59,9 +59,11 @@ const Product = ({ params }) => {
         <div>
           {filteredProducts.map((product) => (
             <div key={product.id}>
-              <p>Name: {product.title}</p>
-              <p>Category: {product.category}</p>
-              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '100px' }} />
+              <h5>Name: {product.title}</h5>
+              <h5>Category: {product.category}</h5>
+              <h5>price: {product.price}</h5>
+              <h5>stock: {product.stock}</h5>
+              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '350px' }} />
               <hr />
             </div>
           ))}
