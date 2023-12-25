@@ -263,7 +263,8 @@ border: 1px solid black;
 
 .footer1{
   width:98.5%;
-  }
+  position:fixed;
+}
 
 .row8{
   width:100%;
@@ -331,6 +332,21 @@ border: 1px solid black;
 }
 
 .view_all{
-  background-color: #232F3E;
+  background-color:#007bff;
+  float:right;
+}
+
+.Buy_now{
+  margin-right: 25px;
+  width:160px;
+  height: 50px;
+  background-color:darkorange;
+  margin-top: 30px;
+}
+
+.Add_cart{
+  width:160px;
+  height: 50px;
+  background-color:darkorange;
 
 }

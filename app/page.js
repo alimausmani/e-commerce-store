@@ -6,7 +6,7 @@ import Image from "./image_slider";
 import "./globals.css";
 import Footer from "./footer";
 import ProductList from './product_listing/page';
-import { useRouter } from 'next/navigation';  // Correct import statement
+import { useRouter } from 'next/navigation'; 
 
 const Home = () => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const Home = () => {
         }
       });
 
-      const limitedProducts = Object.values(categoryProducts).flatMap(products => products.slice(0, 3));
+      const limitedProducts = Object.values(categoryProducts).flatMap(products => products.slice(0, 4));
 
       setProducts(limitedProducts);
       setLoading(false);
@@ -74,33 +74,33 @@ const Home = () => {
         <div>
           {Array.from(new Set(products.map((product) => product.category))).map((category) => (
             <div key={category}>
-              <h2>{category}</h2>
+            <h2 className='category'>{category}</h2>
               {products
                 .filter((product) => product.category === category)
                 .map((product) => (
-                <div key={product.id} className="row"> {/* Use Bootstrap column class to set width */}
-                <div key={product.id} className="col-lg-4" style={{float:'left'}}>
-
+                <div key={product.id} class="container-fluid"> 
+                <div key={product.id} className="col-sm-6 col-lg-3" style={{float:'left',marginBottom: '20px'}}>
+                    <img
+                        onClick={() => handleViewAll(category, product.id)}  // Pass both category and product id
+                        src={product.thumbnail}
+                        alt={product.title}
+                        style={{ maxHeight: '200px', cursor: 'pointer',marginTop:'10px',marginBottom:'10px' }}
+                        />
                     <h5>Name: {product.title}</h5>
                     <h5>Category: {product.category}</h5>
                     <h5>price: {product.price}</h5>
                     <h5>stock: {product.stock}</h5>
-
-                    <img
-                      onClick={() => handleViewAll(category, product.id)}  // Pass both category and product id
-                      src={product.thumbnail}
-                      alt={product.title}
-                      style={{ maxWidth: '100px', cursor: 'pointer' }}
-                    />
-                    <hr />
                   </div>
                 </div>
                 ))}
               <button onClick={() => handleViewAll(category)} className='view_all'>View All</button>
+              <br></br>
             </div>
           ))}
         </div>
+
       )}
+
 
       <Footer />
     </div>

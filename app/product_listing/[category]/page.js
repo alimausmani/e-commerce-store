@@ -68,11 +68,17 @@ const Product = ({ params }) => {
                 alt={product.title}
                 style={{ maxWidth: '300px', cursor: 'pointer' }}
               />
-              <hr />
+              <div>
+                <button className='Buy_now'>Buy now</button>
+                <button className='Add_cart'>Add to Cart</button>
+            </div>
+            <hr />
+
             </div>
           ))}
         </div>
       )}
+     
 
       {filteredProducts.length === 0 && !loading && <p>No matching products found.</p>}
     </div>

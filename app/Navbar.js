@@ -139,25 +139,14 @@ const Navbar = () => {
                     About
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/product_details">
-                    product_details
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/product_listing">
-                    product_listing
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>
         </nav>
       </div>
-
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     </>
   );
 };
-
 export default Navbar;

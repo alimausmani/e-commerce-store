@@ -1,20 +1,15 @@
-// export default function Product({ params }) {
-//     return (
-//     <h1>Product id: {params.pid}</h1>
-
-//     );
-//   }
-
-
-"use client";
-
-    
+// Import necessary modules
+"use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+// Product component
 const Product = ({ params }) => {
+  const router = useRouter();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,32 +40,45 @@ const Product = ({ params }) => {
     };
 
     fetchData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []);
 
   const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
+
+  const handleAddToCart = () => {
+    // Perform add-to-cart logic here
+    const selectedProduct = filteredProducts[0];
+  
+    // Update the state with the new item
+    setCartItems((prevItems) => [...prevItems, selectedProduct]);
+  
+    // After updating the state, navigate to the /cart page
+    router.push('/cart');
+  };
+  
 
   return (
     <div>
       {error && <p>{error}</p>}
-
       {loading && <p>Loading...</p>}
-
       {filteredProducts.length > 0 && (
         <div>
           {filteredProducts.map((product) => (
             <div key={product.id}>
+              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '350px', marginTop: '25px', marginBottom: '15px' }} />
               <h5>Name: {product.title}</h5>
               <h5>Category: {product.category}</h5>
               <h5>price: {product.price}</h5>
               <h5>stock: {product.stock}</h5>
-              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '350px' }} />
-              <hr />
+              <h5>description:{product.description}</h5>
             </div>
           ))}
         </div>
       )}
-
-      {filteredProducts.length === 0 && !loading && <p>No matching products found.</p>}
+      <div>
+        <button className='Buy_now'>Buy now</button>
+        <button className='Add_cart' onClick={handleAddToCart}>Add to Cart</button>
+      </div>
+      <hr />
     </div>
   );
 };

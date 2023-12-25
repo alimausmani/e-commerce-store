@@ -2,8 +2,8 @@ import React from 'react';
 const Footer= () => {
     return (
       <>
-        <div class="footer1"><p>Back to top</p></div>
         <div class="row row8">
+        <div class="footer1"><p>Back to top</p></div>
            <div class="row num4">
                <div class="col col24">
                    <h4>Get to Know Us</h4>
