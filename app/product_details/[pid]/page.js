@@ -1,5 +1,5 @@
 // Import necessary modules
-"use client"
+"use client";
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -7,8 +7,8 @@ import React, { useEffect, useState } from 'react';
 const Product = ({ params }) => {
   const router = useRouter();
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const Product = ({ params }) => {
         }
 
         setProducts(productsArray);
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error.message);
-        setError('Error fetching data. Please try again later.');
-        setLoading(false);
+        // setError('Error fetching data. Please try again later.');
+        // setLoading(false);
       }
     };
 
@@ -45,21 +45,15 @@ const Product = ({ params }) => {
   const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
 
   const handleAddToCart = () => {
-    // Perform add-to-cart logic here
     const selectedProduct = filteredProducts[0];
-  
-    // Update the state with the new item
     setCartItems((prevItems) => [...prevItems, selectedProduct]);
-  
-    // After updating the state, navigate to the /cart page
     router.push('/cart');
   };
-  
 
   return (
-    <div>
-      {error && <p>{error}</p>}
-      {loading && <p>Loading...</p>}
+    <div style={{margin:'auto',width:'1200px'}}>
+      {/* {error && <p>{error}</p>}
+      {loading && <p>Loading...</p>} */}
       {filteredProducts.length > 0 && (
         <div>
           {filteredProducts.map((product) => (
@@ -67,9 +61,9 @@ const Product = ({ params }) => {
               <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '350px', marginTop: '25px', marginBottom: '15px' }} />
               <h5>Name: {product.title}</h5>
               <h5>Category: {product.category}</h5>
-              <h5>price: {product.price}</h5>
-              <h5>stock: {product.stock}</h5>
-              <h5>description:{product.description}</h5>
+              <h5>Price: {product.price}</h5>
+              <h5>Stock: {product.stock}</h5>
+              <h5>Description: {product.description}</h5>
             </div>
           ))}
         </div>
@@ -79,6 +73,8 @@ const Product = ({ params }) => {
         <button className='Add_cart' onClick={handleAddToCart}>Add to Cart</button>
       </div>
       <hr />
+
+      {/* Render the Cart component */}
     </div>
   );
 };
