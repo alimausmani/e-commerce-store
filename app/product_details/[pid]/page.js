@@ -52,7 +52,9 @@ const Product = ({ params }) => {
     setCartItems((prevItems) => [...prevItems, selectedProduct]);
   
     // After updating the state, navigate to the /cart page
-    router.push('/cart');
+    router.push('/cart',
+      undefined,
+      { shallow: true });
   };
   
 

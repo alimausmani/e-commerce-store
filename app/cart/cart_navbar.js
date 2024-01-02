@@ -1,15 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
 
-const CartNavbar = () => {
-    return (
-      <>
-        <h1>hello</h1>
-        <p>Cart Page</p>
-  
-  
-      </>
-    );
-  };
-  
-export default CartNavbar;
+function cart_navbar() {
+  return (
+    <div>
+    <h1>hello navbar cart</h1>
+      
+    </div>
+  )
+}
+
+export default cart_navbar

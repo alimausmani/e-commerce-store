@@ -1,29 +1,31 @@
-// pages/cart.js
-"use client"
-import React from 'react';
-import { useRouter } from 'next/navigation';
+// Cart.js
+import React from "react";
 
-const Cart = () => {
-  const router = useRouter();
-  const { cartItems } = router.query || {};
-
-  // Ensure cartItems is a string before attempting to use startsWith
-  const cartItemsString = typeof cartItems === 'string' ? cartItems : '';
+const Cart = ({ cartItems }) => {
+  const handleCheckout = () => {
+    console.log("Checkout clicked");
+  };
 
   return (
     <div>
       <h1>Shopping Cart</h1>
-      <ul>
-        {cartItemsString &&
-          JSON.parse(cartItemsString).map((item, index) => (
+      {cartItems && cartItems.length > 0 ? (
+        <ul>
+          {cartItems.map((item, index) => (
             <li key={index}>
               <h3>{item.title}</h3>
               <p>Category: {item.category}</p>
               <p>Price: {item.price}</p>
-              {/* Add other product details as needed */}
+              <p>Quantity: {item.quantity}</p>
             </li>
           ))}
-      </ul>
+          <button className="buttonforcart" onClick={handleCheckout}>
+            Checkout
+          </button>
+        </ul>
+      ) : (
+        <p>Your cart is empty</p>
+      )}
     </div>
   );
 };
