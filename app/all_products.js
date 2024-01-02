@@ -20,45 +20,45 @@
 
 
 // "khushboo's code"
-"use client";
+// "use client";
 
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
-const AllProducts = () => {
-  const [products, setProducts] = useState([]);
+// const AllProducts = () => {
+//   const [products, setProducts] = useState([]);
 
-  const callApi = async () => {
-    try {
-      const response = await fetch('https://serverside-five.vercel.app/product');
-      const data = await response.json();
-      setProducts(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+//   const callApi = async () => {
+//     try {
+//       const response = await fetch('https://serverside-five.vercel.app/product');
+//       const data = await response.json();
+//       setProducts(data);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
 
-  useEffect(() => {
-    callApi();
-  }, []);
+//   useEffect(() => {
+//     callApi();
+//   }, []);
 
-  return (
-    <div>
-      <h1>Products</h1>
-      {Array.isArray(products) &&
-        products.map((product) => (
-          <div className="col" id='col1'    key={product.id}>
+//   return (
+//     <div>
+//       <h1>Products</h1>
+//       {Array.isArray(products) &&
+//         products.map((product) => (
+//           <div className="col" id='col1'    key={product.id}>
         
-            <h2>{product.name}</h2>
-            <p>{product.reviews}</p>
-            <p>{product.price}</p>
-            <img src={product.img[0]} alt={product.name} />
-          </div>
-        ))}
-    </div>
-  );
-};
+//             <h2>{product.name}</h2>
+//             <p>{product.reviews}</p>
+//             <p>{product.price}</p>
+//             <img src={product.img[0]} alt={product.name} />
+//           </div>
+//         ))}
+//     </div>
+//   );
+// };
 
-export default AllProducts;
+// export default AllProducts;
 
 
 

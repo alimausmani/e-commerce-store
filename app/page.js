@@ -1,4 +1,3 @@
-// Home.js
 "use client";
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,35 +7,63 @@ import Footer from "./footer";
 import { useRouter } from "next/navigation";
 import Cart from "./cart/page.js";
 
+<<<<<<< HEAD
 const Home = ({ updateCartItems }) => {
   const router = useRouter();
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
+=======
+const Home = () => {
+  const [products, setProducts] = useState([]);
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
+<<<<<<< HEAD
     try {
       const response = await fetch("https://dummyjson.com/products");
+=======
+    const response = await fetch('https://dummyjson.com/products');
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+      return;
+    }
 
-      const data = await response.json();
-
+<<<<<<< HEAD
       console.log("Received data:", data);
+=======
+    const data = await response.json();
+    const productsArray = data.products || [];
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
 
-      const productsArray = data.products || [];
+    if (!Array.isArray(productsArray)) {
+      console.error('Invalid data format. Expected an array.');
+      return;
+    }
 
+<<<<<<< HEAD
       if (!Array.isArray(productsArray)) {
         throw new Error("Invalid data format. Expected an array.");
+=======
+    const categoryProducts = {};
+    productsArray.forEach(product => {
+      if (!categoryProducts[product.category]) {
+        categoryProducts[product.category] = [product];
+      } else {
+        categoryProducts[product.category].push(product);
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
       }
+    });
+    const limitedProducts = Object.values(categoryProducts).map(products => products.slice(0, 4)).flat();
 
+<<<<<<< HEAD
       const categoryProducts = {};
 
       productsArray.forEach((product) => {
@@ -66,6 +93,10 @@ const Home = ({ updateCartItems }) => {
       : `/product_listing/${encodeURIComponent(category)}`;
     router.push(destination);
   };
+=======
+    setProducts(limitedProducts);
+    };
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
 
   const handleAddToCart = (product) => {
     const existingProduct = cartItems.find((item) => item.id === product.id);
@@ -86,6 +117,7 @@ const Home = ({ updateCartItems }) => {
   return (
     <div>
       <Image />
+<<<<<<< HEAD
       {error && <p>{error}</p>}
 
       {loading && <p>Loading...</p>}
@@ -141,10 +173,35 @@ const Home = ({ updateCartItems }) => {
       )}
       {/* Pass cartItems to the Cart component */}
       <Cart cartItems={cartItems} />
+=======
+        <div>
+          {Array.from(new Set(products.map((product) => product.category))).map((category) => (
+            <div key={category}>
+              <h2 className='category'>{category}</h2>
+              <button className='view_all'>
+                <a href={`/product_listing/${category}`}>View All</a>
+              </button>
+              {products
+                .filter((product) => product.category === category)
+                .map((product) => (
+                  <div key={product.id} className="container-fluid"> 
+                    <div key={product.id} className="col-sm-6 col-lg-3" style={{float:'left',marginBottom: '20px'}}>
+                    <a href={`/product_details/${product.id}`}><img src={product.thumbnail} alt={product.title} style={{ maxHeight: '200px', cursor: 'pointer',marginTop:'10px',marginBottom:'10px' }}/></a>
+                      <h5>Name: {product.title}</h5>
+                      <h5>Category: {product.category}</h5>
+                      <h5>price: {product.price}</h5>
+                      <h5>stock: {product.stock}</h5>
+                    </div>
+                  </div>
+                ))}
+              <br></br>
+            </div>
+          ))}
+        </div>
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
       <Footer />
     </div>
   );
 };
-
 export default Home;
 

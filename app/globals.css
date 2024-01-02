@@ -322,7 +322,7 @@ border: 1px solid black;
 }
 
 .price {
-  color: #007bff; /* Blue color for price */
+  color: #007bff; 
 }
 
 .product-image {
@@ -332,8 +332,9 @@ border: 1px solid black;
 }
 
 .view_all{
-  background-color:#007bff;
+  background-color:#ccc;
   float:right;
+  color:white;
 }
 
 .Buy_now{
@@ -350,6 +351,7 @@ border: 1px solid black;
   background-color:darkorange;
 
 }
+<<<<<<< HEAD
 .add_to_cart{
   width:160px;
   height: 50px;
@@ -361,4 +363,23 @@ border: 1px solid black;
   height: 50px;
   background-color:red;
   margin-top: 30px;
+=======
+.high{
+  background-color: #007bff;
+  color:white;
+  width:160px;
+  margin-top:10px ;
+}
+
+.low{
+  background-color: #007bff;
+  color:white;
+  margin-left:30px;
+  width: 160px;
+  margin-top:10px ;
+
+}
+.brands{
+  height:100px;
+>>>>>>> ad143f513d0beade387e9d971cde12f214d0bb8c
 }
