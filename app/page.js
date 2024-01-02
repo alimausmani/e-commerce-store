@@ -1,4 +1,3 @@
-// Home.js
 "use client";
 import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
@@ -9,10 +8,7 @@ import ProductList from './product_listing/page';
 import { useRouter } from 'next/navigation'; 
 
 const Home = () => {
-  const router = useRouter();
   const [products, setProducts] = useState([]);
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -23,26 +19,18 @@ const Home = () => {
 
     if (!response.ok) {
       console.error(`HTTP error! Status: ${response.status}`);
-      setError('Error fetching data. Please try again later.');
-      // setLoading(false);
       return;
     }
 
     const data = await response.json();
-
-    console.log('Received data:', data);
-
     const productsArray = data.products || [];
 
     if (!Array.isArray(productsArray)) {
       console.error('Invalid data format. Expected an array.');
-      // setError('Error fetching data. Please try again later.');
-      // setLoading(false);
       return;
     }
 
     const categoryProducts = {};
-
     productsArray.forEach(product => {
       if (!categoryProducts[product.category]) {
         categoryProducts[product.category] = [product];
@@ -50,50 +38,27 @@ const Home = () => {
         categoryProducts[product.category].push(product);
       }
     });
-
-    const limitedProducts = Object.values(categoryProducts).flatMap(products => products.slice(0, 4));
+    const limitedProducts = Object.values(categoryProducts).map(products => products.slice(0, 4)).flat();
 
     setProducts(limitedProducts);
-    // setLoading(false);
-  };
-
-  const handleViewAll = (category, productId) => {
-    let destination;
-
-    if (productId) {
-        destination = `/product_details/${(productId)}`;
-    } else {
-        destination = `/product_listing/${(category)}`;
-    }
-
-    router.push(destination);
-};
-
+    };
 
   return (
     <div>
       <Image />
-      {/* {error && <p>{error}</p>}
-
-      {loading && <p>Loading...</p>}
-
-      {!loading && ( */}
         <div>
           {Array.from(new Set(products.map((product) => product.category))).map((category) => (
             <div key={category}>
               <h2 className='category'>{category}</h2>
-              <button onClick={() => handleViewAll(category)} className='view_all'>View All</button>
+              <button className='view_all'>
+                <a href={`/product_listing/${category}`}>View All</a>
+              </button>
               {products
                 .filter((product) => product.category === category)
                 .map((product) => (
                   <div key={product.id} className="container-fluid"> 
                     <div key={product.id} className="col-sm-6 col-lg-3" style={{float:'left',marginBottom: '20px'}}>
-                      <img
-                          onClick={() => handleViewAll(category, product.id)}  
-                          src={product.thumbnail}
-                          alt={product.title}
-                          style={{ maxHeight: '200px', cursor: 'pointer',marginTop:'10px',marginBottom:'10px' }}
-                      />
+                    <a href={`/product_details/${product.id}`}><img src={product.thumbnail} alt={product.title} style={{ maxHeight: '200px', cursor: 'pointer',marginTop:'10px',marginBottom:'10px' }}/></a>
                       <h5>Name: {product.title}</h5>
                       <h5>Category: {product.category}</h5>
                       <h5>price: {product.price}</h5>
@@ -105,7 +70,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-      {/* )} */}
       <Footer />
     </div>
   );

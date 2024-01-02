@@ -322,7 +322,7 @@ border: 1px solid black;
 }
 
 .price {
-  color: #007bff; /* Blue color for price */
+  color: #007bff; 
 }
 
 .product-image {
@@ -332,8 +332,9 @@ border: 1px solid black;
 }
 
 .view_all{
-  background-color:#007bff;
+  background-color:#ccc;
   float:right;
+  color:white;
 }
 
 .Buy_now{
