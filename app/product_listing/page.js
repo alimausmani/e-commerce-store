@@ -1,71 +1,68 @@
-// ProductList.js
+// "use client";
+// import React, { useEffect, useState } from 'react';
 
-"use client";
+// const ProductList = ({ match }) => {
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 
-import React, { useEffect, useState } from 'react';
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await fetch('https://dummyjson.com/products');
 
-const ProductList = ({ match }) => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://dummyjson.com/products');
+//         const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+//         console.log('Received data:', data);
 
-        const data = await response.json();
+//         const productsArray = data.products || [];
 
-        console.log('Received data:', data);
+//         if (!Array.isArray(productsArray)) {
+//           throw new Error('Invalid data format. Expected an array.');
+//         }
 
-        const productsArray = data.products || [];
+//         setProducts(productsArray);
+//         setLoading(false);
+//       } catch (error) {
+//         console.error('Error fetching data:', error.message);
+//         setError('Error fetching data. Please try again later.');
+//         setLoading(false);
+//       }
+//     };
 
-        if (!Array.isArray(productsArray)) {
-          throw new Error('Invalid data format. Expected an array.');
-        }
+//     fetchData();
+//   }, []);
 
-        setProducts(productsArray);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error.message);
-        setError('Error fetching data. Please try again later.');
-        setLoading(false);
-      }
-    };
+//   const { category } = match.params;
 
-    fetchData();
-  }, []);
+//   const filteredProducts = products.filter((product) => product.category.toLowerCase() === category.toLowerCase());
 
-  const { category } = match.params;
+//   return (
+//     <div className="product-list">
+//       {error && <p className="error-message">{error}</p>}
 
-  const filteredProducts = products.filter((product) => product.category.toLowerCase() === category.toLowerCase());
+//       {loading && <p className="loading-message">Loading...</p>}
 
-  return (
-    <div className="product-list">
-      {error && <p className="error-message">{error}</p>}
+//       {filteredProducts.length > 0 && (
+//         <div>
+//           {filteredProducts.map((product) => (
+//             <div key={product.id} className="product-item">
+//               <p>Name: {product.title}</p>
+//               <p>Category: {product.category}</p>
+//               <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '100px' }} />
+//               <hr />
+//             </div>
+//           ))}
+//         </div>
+//       )}
 
-      {loading && <p className="loading-message">Loading...</p>}
+//       {filteredProducts.length === 0 && !loading && <p>No matching products found.</p>}
+//     </div>
+//   );
+// };
 
-      {filteredProducts.length > 0 && (
-        <div>
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="product-item">
-              <p>Name: {product.title}</p>
-              <p>Category: {product.category}</p>
-              <img src={product.thumbnail} alt={product.title} style={{ maxWidth: '100px' }} />
-              <hr />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {filteredProducts.length === 0 && !loading && <p>No matching products found.</p>}
-    </div>
-  );
-};
-
-export default ProductList;
+// export default ProductList;

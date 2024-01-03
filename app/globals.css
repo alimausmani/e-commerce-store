@@ -369,3 +369,13 @@ border: 1px solid black;
 .brands{
   height:100px;
 }
+
+.delete{
+  background-color: #2874f0;
+  width: 150px;
+}
+
+.place-order{
+  background-color: #ffa500;
+  width: 150px;
+}

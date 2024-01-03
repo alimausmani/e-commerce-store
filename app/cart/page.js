@@ -1,10 +1,10 @@
+// Cart.js
 "use client";
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const existingCartItems = Cookies.getJSON('cartItems') || [];
@@ -33,31 +33,37 @@ const Cart = () => {
     Cookies.set('cartItems', updatedCartItems);
   };
 
+  const handlePlaceOrder = () => {
+    alert("Order Placed!");
+  };
+
   return (
-    <div style={{ margin: 'auto', width: '1200px' }}>
-      <h2>Shopping Cart</h2>
+    <div style={{ margin: 'auto', width: '80%', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+      <h2>Cart Items</h2>
       <hr />
 
       {cartItems.length > 0 ? (
         <div>
           <ul>
             {cartItems.map((item) => (
-              <li key={item.id}>
-                <img src={item.thumbnail} alt={item.title} style={{ width: '50px', height: '50px' }} />
+              <ul key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <img src={item.thumbnail} alt={item.title} style={{ width:'300px', marginRight: '20px' }} />
                 <div>
                   <strong>{item.title}</strong>
-                  <br />
-                  Quantity: {item.quantity}
-                  <br />
-                  Price: ${item.price * item.quantity}
-                  <br />
-                  <button onClick={() => handleDeleteItem(item.id)}>Delete</button>
+                  <br/><br/>
+                  <h5>Quantity: {item.quantity}</h5>
+                  <h5>Price: ${item.price}</h5>
+                  <h5>Stock: {item.stock}</h5>
+                  <button className="delete" onClick={() => handleDeleteItem(item.id)}>Remove item</button>
                 </div>
-              </li>
+              </ul>
             ))}
           </ul>
-
-          <p>Total Price: ${calculateTotalPrice()}</p>
+          <hr />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <p>Total Price: ${calculateTotalPrice()}</p>
+            <button className="place-order" onClick={handlePlaceOrder}>Place Order</button>
+          </div>
         </div>
       ) : (
         <p>Your cart is empty.</p>

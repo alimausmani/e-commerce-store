@@ -1,4 +1,3 @@
-// Product.js
 "use client";
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -33,7 +32,6 @@ const Product = ({ params }) => {
 
     fetchData();
 
-    // Update cartItems state initially
     const existingCartItems = Cookies.getJSON('cartItems') || [];
     setCartItems(existingCartItems);
   }, []);
@@ -42,24 +40,26 @@ const Product = ({ params }) => {
     try {
       const existingCartItems = Cookies.getJSON('cartItems') || [];
       const existingCartItemIndex = existingCartItems.findIndex((item) => item.id === product.id);
-
+  
       if (existingCartItemIndex !== -1) {
-        // If the product is already in the cart, update its quantity
         const updatedCartItems = [...existingCartItems];
         updatedCartItems[existingCartItemIndex].quantity += 1;
-
+  
         setCartItems(updatedCartItems);
         Cookies.set('cartItems', JSON.stringify(updatedCartItems));
       } else {
-        // If the product is not in the cart, add it with a quantity of 1
         const updatedCartItems = [...existingCartItems, { ...product, quantity: 1 }];
         setCartItems(updatedCartItems);
         Cookies.set('cartItems', JSON.stringify(updatedCartItems));
       }
+  
+      alert(`${product.title} has been added to the cart!`);
+      
     } catch (error) {
       console.error('Error updating cart:', error);
     }
   };
+  
 
   const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
 
@@ -79,7 +79,7 @@ const Product = ({ params }) => {
               <h5>Price: ${product.price}</h5>
               <h5>Stock: {product.stock}</h5>
               <h5>Description: {product.description}</h5>
-              <button className='Add_to_cart' onClick={() => addToCart(product)}>
+              <button className='Add_cart' onClick={() => addToCart(product)}>
                 Add to Cart
               </button>
             </div>
@@ -90,5 +90,4 @@ const Product = ({ params }) => {
     </div>
   );
 };
-
 export default Product;
