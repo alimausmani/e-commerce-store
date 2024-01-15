@@ -29,9 +29,7 @@ const Product = ({ params }) => {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
-
     const existingCartItems = Cookies.getJSON('cartItems') || [];
     setCartItems(existingCartItems);
   }, []);
@@ -58,9 +56,7 @@ const Product = ({ params }) => {
     } catch (error) {
       console.error('Error updating cart:', error);
     }
-  };
-  
-
+  };  
   const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
 
   return (

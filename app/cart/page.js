@@ -47,7 +47,7 @@ const Cart = () => {
           <ul>
             {cartItems.map((item) => (
               <ul key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <img src={item.thumbnail} alt={item.title} style={{ width:'300px', marginRight: '20px' }} />
+                <img src={item.thumbnail} alt={item.title} style={{ width:'350px', marginRight: '20px' }} />
                 <div>
                   <strong>{item.title}</strong>
                   <br/><br/>
@@ -61,7 +61,7 @@ const Cart = () => {
           </ul>
           <hr />
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <p>Total Price: ${calculateTotalPrice()}</p>
+            <h4>Total Price: ${calculateTotalPrice()}</h4>
             <button className="place-order" onClick={handlePlaceOrder}>Place Order</button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 // Product.js
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
@@ -9,6 +9,7 @@ const Product = ({ params }) => {
   const [selectedBrand, setSelectedBrand] = useState('');
   const [availableBrands, setAvailableBrands] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [minRating, setMinRating] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +33,8 @@ const Product = ({ params }) => {
 
     const existingCartItems = Cookies.getJSON('cartItems') || [];
     setCartItems(existingCartItems);
+    console.log(existingCartItems)
+
   }, []);
 
   useEffect(() => {
@@ -43,7 +46,8 @@ const Product = ({ params }) => {
   const filteredProducts = products.filter(
     (product) =>
       product.category === params.category &&
-      (selectedBrand === '' || product.brand === selectedBrand)
+      (selectedBrand === '' || product.brand === selectedBrand) &&
+      (minRating === '' || product.rating >= parseFloat(minRating))
   );
 
   const handleSort = (newSortOrder) => {
@@ -101,7 +105,7 @@ const Product = ({ params }) => {
           Low to High
         </button>
       </div>
-
+      
       <div style={{ border: 'solid 2px black', height: '350px', width: '400px', float: 'left', marginRight: '30px', padding: '20px' }}>
         <h5> FILTERS </h5>
         <h6>1000+Products</h6>
@@ -119,6 +123,10 @@ const Product = ({ params }) => {
             ))}
           </select>
         </label>
+        <label style={{ fontSize: '20px' }}>
+          Filter by Rating:
+          <input type="number" placeholder="Min Rating" value={minRating} onChange={(e) => setMinRating(e.target.value)} />
+        </label>
       </div>
       {sortedProducts.length > 0 && (
         <div style={{ float: 'left', width: '500px' }}>
@@ -132,6 +140,8 @@ const Product = ({ params }) => {
               <h5>Price: {product.price}</h5>
               <h5>Stock: {product.stock}</h5>
               <h5>Brand: {product.brand}</h5>
+              <h5>Rating: {product.rating}</h5>
+              
               <div>
                 <button className='Buy_now'>Buy now</button>
                 <button className='Add_cart' onClick={() => handleAddToCart(product)}>

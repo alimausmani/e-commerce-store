@@ -1,4 +1,4 @@
-.main-navbar{
+/* .main-navbar{
   border-bottom: 1px solid #ccc;
 }
 .main-navbar .top-navbar{
@@ -44,7 +44,7 @@
       font-size: 12px;
       padding: 8px 10px;
   }
-}
+} */
 #product {
   width: 1710px;
   height: 550px;
@@ -83,33 +83,6 @@
   border: 1px solid #000;
 
 }
-
-
-/* #footer1{
-  text-align: center;
-  width: 100%;
-  height: 50px;
-  border: 2px solid #000;
-  display: flex;
-  background-color:blue;
-} */
-/* 
-#footer1 {
-  text-align: center; 
-  line-height: 50px;
-  height: 50px; 
-  background-color: #5076de;
-}
-
-
-#footer{
-      width: 100%;
-      height: 590px;
-      border: 2px solid #000;
-      display: flex;
-  } */
-
-  /* Add this CSS to your styles or create a separate CSS file */
 
 h2 {
   font-size: 24px;
@@ -288,8 +261,6 @@ border: 1px solid black;
   margin-bottom: 15px;
 }
 }
-
-
 .product-listing {
   text-align: center;
 }
@@ -349,7 +320,13 @@ border: 1px solid black;
   width:160px;
   height: 50px;
   background-color:darkorange;
+}
 
+.add_to_cart{
+  width:160px;
+  height: 50px;
+  background-color:pink;
+  margin-top: 30px;
 }
 .high{
   background-color: #007bff;
@@ -371,11 +348,138 @@ border: 1px solid black;
 }
 
 .delete{
-  background-color: #2874f0;
-  width: 150px;
+  background-color: #007bff;
+  width:150px;
 }
 
 .place-order{
   background-color: #ffa500;
-  width: 150px;
+}
+
+
+/*navbarr */
+
+.header_1{
+  height: 56px;
+  float:left
+}
+
+.header_2{
+  height: 56px;
+}
+
+.Cart{
+  float:right;
+  margin-left: 10px;
+  margin-right: 35px; 
+}
+
+.Search_bar{
+  float: right;
+  margin-right: 35px;
+}
+
+.E_icon {
+  margin-right:50px;
+  float: left; 
+  margin-left: 60px;
+}
+
+@media (max-width: 992px) {
+  .E_icon {
+      float: none;
+      margin: 0 auto; 
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      position: sticky;
+  }
+}
+
+.menu{
+  height: 20px;
+  width: 30px;
+  float: left;
+  margin-top: 50px;
+  margin-left: 15px;
+}
+.cart{
+  height:auto;
+  margin-top: 20px;
+  float:right;
+}
+
+@media (max-width: 576px) {
+  .cart{
+      margin-top: 42px;
+      height: 25px;
+  }
+}
+
+.Smartphones{
+  float: left;
+  margin-right: 30px;
+}
+  
+.Laptops{
+  float: left;
+  margin-right: 30px;
+
+}
+.Home_decor{
+  float: left;
+  margin-right: 30px;
+
+}
+.More{
+  float: left;
+  margin-right: 30px;
+
+}
+
+.row2{
+  width:auto;
+  height:352px; 
+  background-color: #3722D3;
+  margin-top: 70px;
+  margin-bottom: 150px;
+  border-radius: 20px;
+  border:solid black 2px;
+}
+.col-md{
+  border:solid pink 2px;
+  height:403px;
+  width: 305px;
+  float:left;
+}
+
+.col-lg-3{
+    border:solid pink 2px;
+    height:403px;
+    width: 305px;
+    float:left;
+}
+.row{
+  margin: auto;
+  height:auto;
+  width: auto;
+  border: solid black 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.font{
+  color: var(--Logo---Blue, #3722D3);
+  font-family: Inika;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px;
+}
+
+.footer{
+  background-color: #3722D3;
+  width:auto;
+  height: 230px;
+  margin-top: 50px;
 }
