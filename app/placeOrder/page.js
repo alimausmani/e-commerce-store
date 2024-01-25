@@ -1,13 +1,15 @@
 import React from "react";
-import Orders from "./order.js";
-import Navbar from "./order.js";
-import Footer from "../footer";
+import './order.css';
+
 const Page = () => {
     return (
       <>
-        <Navbar /> 
-        <div className="orderdiv"style={{ height: '800px' }}></div>
-        <Footer />       
+        <div class="green"><img src="/rightlogo.png"></img></div>
+        <div class="order">Order  Successfully Placed</div>
+        <div class="email">Track Details on your email-id meenashivani@133</div>
+        <div class="button">
+          <button>Continue Shoping<img src="/cart_go.png"></img></button>
+        </div>
       </>
     );
   };

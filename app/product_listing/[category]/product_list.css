@@ -1,0 +1,9 @@
+.filter{
+    border: solid 2px black;
+    height: 350px;
+    width: 400px;
+    float: left;
+    margin-right:30px; 
+    padding: 20px;
+}
+

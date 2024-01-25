@@ -2,6 +2,8 @@
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
+import './product_detail.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 const Product = ({ params }) => {
   const router = useRouter();
@@ -27,9 +29,11 @@ const Product = ({ params }) => {
         }
       } catch (error) {
         console.error('Error fetching data:', error);
-      }
+      } 
     };
+
     fetchData();
+
     const existingCartItems = Cookies.getJSON('cartItems') || [];
     setCartItems(existingCartItems);
   }, []);
@@ -37,53 +41,49 @@ const Product = ({ params }) => {
   const addToCart = (product) => {
     try {
       const existingCartItems = Cookies.getJSON('cartItems') || [];
-      const existingCartItemIndex = existingCartItems.findIndex((item) => item.id === product.id);
+      const existingCartItem = existingCartItems.find((item) => item.id === product.id);
   
-      if (existingCartItemIndex !== -1) {
-        const updatedCartItems = [...existingCartItems];
-        updatedCartItems[existingCartItemIndex].quantity += 1;
-  
-        setCartItems(updatedCartItems);
-        Cookies.set('cartItems', JSON.stringify(updatedCartItems));
+      if (existingCartItem) {
+        existingCartItem.quantity += 1;
       } else {
-        const updatedCartItems = [...existingCartItems, { ...product, quantity: 1 }];
-        setCartItems(updatedCartItems);
-        Cookies.set('cartItems', JSON.stringify(updatedCartItems));
+        existingCartItems.push({ ...product, quantity: 1 });
       }
   
-      alert(`${product.title} has been added to the cart!`);
-      
+      setCartItems(existingCartItems);
+      Cookies.set('cartItems', JSON.stringify(existingCartItems));
+  
     } catch (error) {
       console.error('Error updating cart:', error);
     }
   };  
-  const filteredProducts = products.filter((product) => product.id.toString() === params.pid);
+
+  const filteredProducts = products.filter((product) => product.id.toString() === params.pid)
 
   return (
-    <div style={{ margin: 'auto', width: '1200px' }}>
-      {filteredProducts.length > 0 && (
-        <div>
-          {filteredProducts.map((product) => (
-            <div key={product.id}>
-              <img
-                src={product.thumbnail}
-                alt={product.title}
-                style={{ maxWidth: '350px', marginTop: '25px', marginBottom: '15px' }}
-              />
-              <h5>Name: {product.title}</h5>
-              <h5>Category: {product.category}</h5>
-              <h5>Price: ${product.price}</h5>
-              <h5>Stock: {product.stock}</h5>
-              <h5>Description: {product.description}</h5>
-              <button className='Add_cart' onClick={() => addToCart(product)}>
-                Add to Cart
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-      <hr />
+    <div >
+        {filteredProducts.length > 0 ? (
+          <div>
+            {filteredProducts.map((product) => (
+              <div className="product container" key={product.id}>
+                <div className='img_container'>
+                  <img src={product.thumbnail} className='product_image' style={{width:'100%',height:'100%', marginTop: '0', marginRight: '30px' }}/>
+                </div>
+                <div className='product_container'>
+                  <div className='category'>{product.category}</div>
+                  <div className='title'>{product.title}</div>
+                  <div className='discription'>{product.description}</div>
+                  <div className='rs'>Rs ${product.price}</div>
+                  <button className='Add_cart' onClick={() => addToCart(product)}>Add to Cart<img id="img" src="/cart_go.png"/></button>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+            <p>No product found with ID {params.pid}</p>
+        )}
+        <hr />
     </div>
   );
 };
+
 export default Product;

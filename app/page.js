@@ -1,108 +1,303 @@
-// "use client";
-// import React, { useState, useEffect } from "react";
-// import "bootstrap/dist/css/bootstrap.css";
 import Image from "./image_slider";
-// import "./globals.css";
 import Footer from "./footer";
-// import { useRouter } from "next/navigation";
-// import Cart from "./cart/page.js";
-
+import './home.css'
 const Home = () => {
-//   const [products, setProducts] = useState([]);
-
-//   useEffect(() => {
-//     fetchData();
-//   }, []);
-
-//   const fetchData = async () => {
-//     const response = await fetch('https://dummyjson.com/products');
-
-//     if (!response.ok) {
-//       console.error('HTTP error! Status: ${response.status}');
-//       return;
-//     }
-
-//     const data = await response.json();
-//     const productsArray = data.products || [];
-
-//     if (!Array.isArray(productsArray)) {
-//       console.error('Invalid data format. Expected an array.');
-//       return;
-//     }
-
-//     const categoryProducts = {};
-//     productsArray.forEach(product => {
-//       if (!categoryProducts[product.category]) {
-//         categoryProducts[product.category] = [product];
-//       } else {
-//         categoryProducts[product.category].push(product);
-//       }
-//     });
-//   // console.log(categoryProducts)
-
-//     const limitedProducts = [].concat(...Object.values(categoryProducts).map(products => products.slice(0, 4)));
-
-//     setProducts(limitedProducts);
-//     console.log(limitedProducts)
-
-//     };
-  
   return (
     <>
-      <h1>hello</h1>
-      <Image />
-      <div className="container row">
-          <div className="col-sm-12 col-lg-3 one"></div>
-          <div className="col-lg-3  d-none d-lg-block two"></div>
-          <div className="col-lg-3  d-none d-lg-block three"></div>
-          <div className="col-lg-3  d-none d-lg-block four"></div>
+    <div className="container" >
+        <Image />
+        <div className="row">
+          <h4>Smartphones</h4>
+          <div className="col col-sm-12 col-lg">
+            <img src="image1/Rectangle 22.png" className="image"></img>
+            <div>smartphone</div>
+            <div className='col-9 '>
+              <div className="star">
+                <img src="Star.png"></img>
+                <img src="Star.png"></img>
+                <img src="Star.png"></img>
+                <img src="Star.png"></img>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block two">
+            <img src="image1/Rectangle 23.png" className="image"></img>
+            <div>smartphone</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block three">
+            <img src="image1/Rectangle 24.png" className="image"></img>
+            <div>smartphone</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col-lg d-none d-lg-block four">
+            <img src="image1/Rectangle 25.png" className="image_l"></img>
+            <div>smartphone</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <a href="/product_listing/smartphones"><div className="explore">Explore<img id="img"src="Go.png"/></div></a>
         </div>
-      <div className="container row">
-        <div className="col-sm-12 col-lg-3 one"></div>
-        <div className="col-lg-3  d-none d-lg-block two"></div>
-        <div className="col-lg-3  d-none d-lg-block three"></div>
-        <div className="col-lg-3  d-none d-lg-block four"></div>
+
+        <div className="row">
+          <h4>fragrances</h4>
+          <div className="col col-sm-12 col-lg one">
+            <img src="https://www.riyalifestyle.com/cdn/shop/files/Riya_Women_Lifestyle_3.jpg?crop=center&height=2048&v=1694435219&width=2048" className="image"></img>
+            <div>fragrances</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block two">
+            <img src="https://img.freepik.com/premium-photo/perfume-bottle-pastel-color_42136-2289.jpg" className="image"></img>
+            <div>fragrances</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block three">
+            <img src="https://s3-us-west-2.amazonaws.com/issuewireassets/primg/50852/22022021-and-10332-copy-2-min1034253010.jpg" className="image"></img>
+            <div>fragrances</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col-lg d-none d-lg-block four">
+            <img src="https://m.media-amazon.com/images/I/81rRf2PiqnL._AC_UF1000,1000_QL80_.jpg" className="image"></img>
+            <div>fragrances</div>
+
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="explore">Explore<img id="img" src="Go.png"/></div>
+        </div>
+
+        <div className="row">
+          <h4>Home Decoration</h4>
+          <div className="col col-sm-12 col-lg one">
+            <img src="https://kotart.in/cdn/shop/products/Kotart-Modern-Wall-Decor-Paintings-with-Frame-for-Home-Decoration-10.jpg?v=1697546161&width=1946" className="image"></img>
+            <div>Home decore</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block two">
+            <img src="https://hometown.gumlet.io/media/cms/icons/Kitchenware/table-accents.jpg?w=200&dpr=2.6" className="image"></img>
+            <div>Home decore</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block three">
+            <img src="https://qph.cf2.quoracdn.net/main-qimg-48b99fa70868f036e4edbfc1c55cea03-lq" className="image"></img>
+            <div>Home decore</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col-lg d-none d-lg-block four">
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2020-01/7/6/asset/7c97058bb769/sub-buzz-2752-1578378921-15.jpg?downsize=900:*&output-format=auto&output-quality=auto" className="image"></img>
+            <div>Home decore</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+            <div className="explore">Explore<img id="img" src="Go.png"/></div>
+          </div>
+        </div>
+
+        <div className="row">
+          <h4>Laptops</h4>
+          <div className="col col-sm-12 col-lg one">
+            <img src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" className="image"></img>
+            <div>laptops</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block two">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2023/01/businesslaptops-2048px-0056.jpg" className="image"></img>
+            <div>Laptops</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col col-lg d-none d-lg-block three">
+            <img src="https://cdn.create.vista.com/api/media/medium/213011542/stock-photo-laptop-blank-screen-cup-coffee-table?token=" className="image"></img>
+            <div>Laptops</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="col-lg d-none d-lg-block four">
+            <img src="https://cdn.create.vista.com/api/media/medium/204347204/stock-photo-top-view-workplace-coffee-devices-pink-tabletop-mockup?token=" className="image"></img>
+            <div>Laptops</div>
+            <div className='col-9 '>
+              <div>
+                <div className="star">
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                  <img src="Star.png"></img>
+                </div>
+              </div>
+            </div>
+            <h6 className='col-3 '>
+              <div>Rs.699</div>
+            </h6>
+          </div>
+          <div className="explore">Explore<img id="img" src="Go.png"/></div>
       </div>
-      <Footer />
-
-
-
-
-
-
-
-
-
+    </div>
     </>
-
-    // <div>
-      // <Image />
-//         <div>
-//           {Array.from(new Set(products.map((product) => product.category))).map((category) => (
-//             <div key={category}>
-//               <h2 className='category'>{category}</h2>
-//               <button className='view_all'>
-//               <a href={`/product_listing/${category}`}>View All</a>
-//               </button>
-//               {products
-//                 .filter((product) => product.category === category)
-//                 .map((product) => (
-//                   <div key={product.id} className="container-fluid"> 
-//                     <div key={product.id} className="col-sm-6 col-lg-3" style={{float:'left',marginBottom: '20px'}}>
-//                     <a href={`/product_details/${product.id}`}><img src={product.thumbnail} alt={product.title} style={{ maxHeight: '200px', cursor: 'pointer', marginTop:'10px', marginBottom:'10px' }}/></a>
-//                       <h5>Name: {product.title}</h5>
-//                       <h5>Category: {product.category}</h5>
-//                       <h5>price: {product.price}</h5>
-//                       <h5>stock: {product.stock}</h5>
-//                     </div>
-//                   </div>
-//                 ))}
-//               <br></br>
-//             </div>
-//           ))}
-//         </div>
-      // <Footer />
-//     </div>
   );
 };
 export default Home;

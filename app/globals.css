@@ -1,485 +1,168 @@
-/* .main-navbar{
-  border-bottom: 1px solid #ccc;
-}
-.main-navbar .top-navbar{
-  background-color: #2874f0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.main-navbar .top-navbar .brand-name{
-  color: #fff;
-}
-.main-navbar .top-navbar .nav-link{
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-}
-.main-navbar .top-navbar .dropdown-menu{
-  padding: 0px 0px;
-  border-radius: 0px;
-}
-.main-navbar .top-navbar .dropdown-menu .dropdown-item{
-  padding: 8px 16px;
-  border-bottom: 1px solid #ccc;
-  font-size: 14px;
-}
-.main-navbar .top-navbar .dropdown-menu .dropdown-item i{
-  width: 20px;
-  text-align: center;
-  color: #2874f0;
-  font-size: 14px;
-}
-.main-navbar .navbar{
-  padding: 0px;
-  background-color: #ddd;
-}
-.main-navbar .navbar .nav-item .nav-link{
-  padding: 8px 20px;
-  color: #000;
-  font-size: 15px;
-}
-
-@media only screen and (max-width: 600px) {
-  .main-navbar .top-navbar .nav-link{
-      font-size: 12px;
-      padding: 8px 10px;
-  }
-} */
-#product {
-  width: 1710px;
-  height: 550px;
-  margin: auto;
-  border: 1px solid #000;
-  display: flex;
-  margin-bottom: 20px;
-}
-
-
-#col1 {
-  width: 435px;
-  height: 548px; 
-  border: 1px solid #000; 
-  margin-right: 20px;
-}
-#col2 {
-  width: 435px;
-  height: 548px;
-  border: 1px solid #000;
-  margin-right: 20px;
-
-}
-
-#col3 {
-  width: 435px;
-  height: 548px;
-  border: 1px solid #000;
-  margin-right: 20px;
-
-}
-
-#col4 {
-  width: 435px;
-  height: 548px;
-  border: 1px solid #000;
-
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.user-list-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.user-item {
-  flex: 1 0 25%;
-  margin-bottom: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.user-avatar {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.user-details {
-  text-align: center; 
-}
-
-/* Add this to your styles.css or any other stylesheet file */
-
-.login-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 8px;
-}
-
-input {
-  padding: 8px;
-  margin-bottom: 16px;
-}
+@import url('https://fonts.googleapis.com/css?family=Inika');
 
 button {
   padding: 10px;
-  /* background-color: #007bff; */
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-/*   
-button:hover {
-  background-color: #0056b3;
-} */
 
-.error-message {
-  color: red;
-  margin-top: 10px;
+@media(min-width:1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0%;
+  }
 }
 
-
-
-.footer1{
-  height: 49px;  
-  width:1833px;
-  text-align: center;
-  background-color: #485769;
-  color:white;
-}
-
-.row8{
-  height: 600px;  
-  width:1845px;
-  background-color:#232F3E;
-}
-
-.num4{
-  height: 320px;
-  width:1500px;
-  margin:auto;
-  margin-top:40px;
-  color:white;
-}
-
-.col24{
-  height:318px;
-  width:136px;
-   
-  float:left;
-  padding:0px 15px;   
-}
-
-.col25{
-  height:318px;
-  width:184px;
-  
-  float:left;
-  padding:0px 15px;
-  margin-left:97px;
-}
-
-.col26{
-  height:318px;
-  width:222px;
- 
-  float:left;
-  padding:0px 15px;
-  margin-left:100px;
-}
-
-.col27{
-  height:318px;
-  width:157px;
- 
-  float:left;
-  padding:0px 15px;
-  margin-left:100px;
-}
-.searchbar{
-height: 50.34px;
-border: 1px solid white;
-}
-.clickbutton{
-height: 50.34px;
-background-color:blue;
-border: 1px solid black;
-}
-
-@media only screen and (min-width:200px) and (max-width:700px){
-#product{
-  width:100%;
-  height:150px;
-}
-
-#col1{
-  height:100%;
-}
-
-.footer1{
-  width:98.5%;
-  position:fixed;
-}
-
-.row8{
-  width:100%;
-}
-  /* Adjust styles for smaller screens */
-
-.num4 {
-  width: 100%;
-}
-
-.col24,
-.col25,
-.col26,
-.col27 {
-  width: 100%;
-  margin-left: 0;
-}
-
-.col24,
-.col25 {
-  margin-bottom: 15px;
-}
-}
-.product-listing {
-  text-align: center;
-}
-
-.product-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.product-item {
-  width: 23%; /* Adjust as needed to fit four items in a row */
-  margin: 1%;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-.product-item h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.product-item p {
-  margin-bottom: 10px;
-}
-
-.rating {
-  color: #ffa500; /* Orange color for rating */
-  margin-bottom: 5px;
-}
-
-.price {
-  color: #007bff; 
-}
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
-}
-
-.view_all{
-  background-color:#ccc;
-  float:right;
-  color:white;
-}
-
-.Buy_now{
-  margin-right: 25px;
-  width:160px;
-  height: 50px;
-  background-color:darkorange;
-  margin-top: 30px;
-}
-
-.Add_cart{
-  width:160px;
-  height: 50px;
-  background-color:darkorange;
-}
-
-.add_to_cart{
-  width:160px;
-  height: 50px;
-  background-color:pink;
-  margin-top: 30px;
-}
-.high{
+.high {
   background-color: #007bff;
-  color:white;
-  width:160px;
-  margin-top:10px ;
-}
-
-.low{
-  background-color: #007bff;
-  color:white;
-  margin-left:30px;
+  color: white;
   width: 160px;
-  margin-top:10px ;
-
-}
-.brands{
-  height:100px;
+  margin-top: 10px;
 }
 
-.delete{
+.low {
   background-color: #007bff;
-  width:150px;
+  color: white;
+  width: 160px;
+  margin-left: 30px;
+  margin-top: 10px;
+
 }
 
-.place-order{
-  background-color: #ffa500;
+.brands {
+  height: 100px;
 }
 
 
-/*navbarr */
+.head {
+  margin-top: 20px;
+  width: 1280px;
+}
 
-.header_1{
+.header_1 {
   height: 56px;
-  float:left
+  float: left
 }
 
-.header_2{
+.header_2 {
   height: 56px;
 }
 
-.Cart{
-  float:right;
+.Cart {
+  float: right;
   margin-left: 10px;
-  margin-right: 35px; 
+  margin-right: 35px;
 }
 
-.Search_bar{
+.Search_bar {
   float: right;
   margin-right: 35px;
 }
 
 .E_icon {
-  margin-right:50px;
-  float: left; 
-  margin-left: 60px;
+  margin-right: 50px;
+  float: left;
+  /* margin-left: 60px; */
 }
 
 @media (max-width: 992px) {
   .E_icon {
-      float: none;
-      margin: 0 auto; 
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      position: sticky;
+    float: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    position: sticky;
   }
 }
 
-.menu{
+.menu {
   height: 20px;
   width: 30px;
   float: left;
   margin-top: 50px;
   margin-left: 15px;
 }
-.cart{
-  height:auto;
+
+.cart {
+  height: auto;
   margin-top: 20px;
-  float:right;
+  float: right;
 }
 
 @media (max-width: 576px) {
-  .cart{
-      margin-top: 42px;
-      height: 25px;
+  .cart {
+    margin-top: 42px;
+    height: 25px;
   }
 }
 
-.Smartphones{
+.Smartphones {
   float: left;
   margin-right: 30px;
 }
-  
-.Laptops{
+
+.Laptops {
   float: left;
-  margin-right: 30px;
+  margin-right:28px;
 
 }
-.Home_decor{
+
+.Home_decor {
   float: left;
-  margin-right: 30px;
+  margin-right: 28px;
 
 }
-.More{
+
+.More {
   float: left;
-  margin-right: 30px;
-
+  margin-right: 28px;
 }
 
-.row2{
-  width:auto;
-  height:352px; 
-  background-color: #3722D3;
-  margin-top: 70px;
-  margin-bottom: 150px;
-  border-radius: 20px;
-  border:solid black 2px;
-}
-.col-md{
-  border:solid pink 2px;
-  height:403px;
-  width: 305px;
-  float:left;
-}
-
-.col-lg-3{
-    border:solid pink 2px;
-    height:403px;
-    width: 305px;
-    float:left;
-}
-.row{
-  margin: auto;
-  height:auto;
-  width: auto;
-  border: solid black 2px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.font{
+.font {
   color: var(--Logo---Blue, #3722D3);
   font-family: Inika;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   line-height: 56px;
 }
 
-.footer{
+
+.footer {
   background-color: #3722D3;
-  width:auto;
   height: 230px;
-  margin-top: 50px;
+  position:relative;
+  top:100px;
+  width: 100%;
+}
+
+
+.nav {
+  margin: auto;
+}
+
+.footer_icon {
+  margin-bottom: 40px;
+  margin-left: 870px;
+}
+
+@media(max-width) {
+  .footer_icon {
+    float: left;
+  }
+}
+
+.text {
+  width: max-content;
+  font-family: Inika;
+  margin: 15px auto;
+  color: var(--Logo---Light, #FBE9A9);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+#img{
+  margin-left:30px;
 }

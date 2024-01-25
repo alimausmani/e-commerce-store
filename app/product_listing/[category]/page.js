@@ -1,15 +1,14 @@
-// Product.js
 "use client";
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
+import './product_list.css';
 
 const Product = ({ params }) => {
   const [products, setProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState(null);
-  const [selectedBrand, setSelectedBrand] = useState('');
+  const [minRating, setMinRating] = useState('');
   const [availableBrands, setAvailableBrands] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [minRating, setMinRating] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +33,6 @@ const Product = ({ params }) => {
     const existingCartItems = Cookies.getJSON('cartItems') || [];
     setCartItems(existingCartItems);
     console.log(existingCartItems)
-
   }, []);
 
   useEffect(() => {
@@ -46,39 +44,11 @@ const Product = ({ params }) => {
   const filteredProducts = products.filter(
     (product) =>
       product.category === params.category &&
-      (selectedBrand === '' || product.brand === selectedBrand) &&
       (minRating === '' || product.rating >= parseFloat(minRating))
   );
 
   const handleSort = (newSortOrder) => {
     setSortOrder(newSortOrder);
-  };
-
-  const handleBrandFilter = (brand) => {
-    setSelectedBrand(brand);
-  };
-
-  const handleAddToCart = (product) => {
-    try {
-      const existingCartItems = Cookies.getJSON('cartItems') || [];
-      const existingCartItemIndex = existingCartItems.findIndex((item) => item.id === product.id);
-
-      if (existingCartItemIndex !== -1) {
-        const updatedCartItems = [...existingCartItems];
-        updatedCartItems[existingCartItemIndex].quantity += 1;
-
-        setCartItems(updatedCartItems);
-        Cookies.set('cartItems', JSON.stringify(updatedCartItems));
-      } else {
-        const updatedCartItems = [...existingCartItems, { ...product, quantity: 1 }];
-        setCartItems(updatedCartItems);
-        Cookies.set('cartItems', JSON.stringify(updatedCartItems));
-      }
-      alert(`${product.title} has been added to the cart!`);
-
-    } catch (error) {
-      console.error('Error updating cart:', error);
-    }
   };
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -105,24 +75,11 @@ const Product = ({ params }) => {
           Low to High
         </button>
       </div>
-      
-      <div style={{ border: 'solid 2px black', height: '350px', width: '400px', float: 'left', marginRight: '30px', padding: '20px' }}>
+
+      <div className="filter">
         <h5> FILTERS </h5>
         <h6>1000+Products</h6>
         <hr />
-        <label style={{ fontSize: '20px' }}>
-          Filter by Brand:
-          <select value={selectedBrand} onChange={(e) => handleBrandFilter(e.target.value)}>
-            <option value="" className='brands'>
-              All Brands
-            </option>
-            {availableBrands.map((brand) => (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            ))}
-          </select>
-        </label>
         <label style={{ fontSize: '20px' }}>
           Filter by Rating:
           <input type="number" placeholder="Min Rating" value={minRating} onChange={(e) => setMinRating(e.target.value)} />
@@ -141,14 +98,6 @@ const Product = ({ params }) => {
               <h5>Stock: {product.stock}</h5>
               <h5>Brand: {product.brand}</h5>
               <h5>Rating: {product.rating}</h5>
-              
-              <div>
-                <button className='Buy_now'>Buy now</button>
-                <button className='Add_cart' onClick={() => handleAddToCart(product)}>
-                  Add to Cart
-                </button>
-              </div>
-              <hr />
             </div>
           ))}
         </div>
@@ -158,3 +107,26 @@ const Product = ({ params }) => {
 };
 
 export default Product;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
